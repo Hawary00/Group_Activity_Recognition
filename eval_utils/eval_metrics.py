@@ -58,7 +58,18 @@ def eval_model(model, test_loader, device, class_names, save_path):
 
             # Get predicted class indices
             predicted = torch.argmax(toutputs, dim=1)
-            true_labels = torch.argmax(tlabels, dim=1)  # Fix here!
+
+            # # Debugging step
+            # print(f"tlabels shape: {tlabels.shape}")  # Check tensor dimensions
+            # print(f"tlabels shape: {tlabels.dim()}")  # Add this to debug
+
+            # Fix based on tensor shape
+            if tlabels.dim() == 1:
+                true_labels = tlabels  # No need for argmax
+            else:
+                true_labels = torch.argmax(tlabels, dim=1)  # If 2D, apply argmax
+
+
 
             # Stroe prdiction and true label
             y_pred.extend(predicted.cpu().numpy()) # Convert to NumPy
