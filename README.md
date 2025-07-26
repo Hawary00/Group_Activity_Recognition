@@ -1,4 +1,8 @@
-# Group_Activity_Recognition
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/22cc8c54-f3c7-4900-a9db-3e37fffac5ad" alt="Background Image" width="95%" />
+</div>
+
+# Group Activity Recognition
 A modern implementation of CVPR 2016 paper: "A Hierarchical Deep Temporal Model for Group Activity Recognition."
 
 ## Table of Contents
